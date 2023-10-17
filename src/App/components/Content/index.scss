@@ -1,0 +1,48 @@
+#content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(100% - 4rem);
+    width: calc(100% - 4rem);
+    padding: 2rem;
+    display: flex;
+    .page {
+        flex: 1;
+        color: #FFF;
+    }
+    .page:nth-of-type(1) {
+        img {
+            display: block;
+            height: min(35%, );
+            border-radius: 50%;
+            object-fit: contain;
+        }
+        h3 {
+            margin: 0;
+        }
+        h3.name {
+            font-size: min(4.5rem, 13vw);
+        }
+        h3.englishName {
+            font-size: calc(min(4.5rem, 13vw) * var(--font-ratio));
+        }
+        > div {
+            display: flex;
+            align-items: center;
+            font-size: min(1.5rem, 4vw);
+            gap: 1rem;
+            margin: 0.5rem 0;
+            p {
+                margin: 0;
+            }
+        }
+    }
+    .buttonBar {
+        position: absolute;
+        display: none;
+    }
+}
+
+#content:not(.ready) {
+    opacity: 0;
+}

@@ -1,0 +1,115 @@
+#background {
+    position: relative;
+    backdrop-filter: blur(5px) brightness(0.6);
+    overflow: hidden;
+    border-radius: 0 2vw 0 2vw;
+    .welcomeBox {
+        position: absolute;
+        display: flex;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+        h1, h2 {
+            color: #FFF;
+            margin: 0;
+        }
+        h1 {
+            font-size: 3rem;
+            white-space: pre-wrap;
+        }
+        h2 {
+            font-size: 2rem;
+        }
+    }
+}
+#background::before,
+#background::after {
+    content: "";
+    position: absolute;
+    height: 25%;
+    width: 25%;
+    border: 0.25rem solid #FFF;
+}
+#background::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+#background::after {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+}
+
+#background.minimal {
+    height: 0;
+    width: 0;
+    .welcomeBox {
+        h1, h2 {
+            color: #FFF0;
+            transform: translateY(1rem);
+        }
+    }
+}
+
+// 停留4秒
+#background.title {
+    height: 15rem;
+    width: min(50rem, 90vw);
+    transition: height 1.75s, width 1.75s;
+    .welcomeBox {
+        h1, h2 {
+            color: #FFF;
+            transform: translateY(0);
+            transition-property: color transform;
+            transition-duration: 2s;
+        }
+        h1 {
+            transition-delay: 1.5s;
+        }
+        h2 {
+            transition-delay: 2s;
+        }
+    }
+}
+@media (max-aspect-ratio: 1/1) {
+    #background {
+        .welcomeBox {
+            justify-content: space-evenly;
+            align-items: baseline;
+            h1, h2 {
+                margin-left: 2rem;
+            }
+        }
+    }
+    #background.title {
+        height: 25rem;
+    }
+}
+
+#background.expand {
+    height: 95vh;
+    width: 90vw;
+    transition: height 2s 1.5s, width 2s 1.5s;
+    .welcomeBox {
+        h1, h2 {
+            color: #FFF0;
+            transform: translateY(-1rem);
+            transition-property: color transform;
+            transition-duration: 1s;
+        }
+        h1 {
+            transition-delay: 0s;
+        }
+        h2 {
+            transition-delay: 0.5s;
+        }
+    }
+}

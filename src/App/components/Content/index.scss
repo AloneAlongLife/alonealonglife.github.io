@@ -113,6 +113,7 @@
         .page:not(.show) {
             opacity: 0%;
             pointer-events: none;
+            transition: opacity 0s 0.15s;
         }
         .buttonBar {
             display: flex;
@@ -136,6 +137,7 @@
             }
             button:not(.show) {
                 opacity: 0%;
+                transition: opacity 0s 0.15s;
                 pointer-events: none;
             }
         }

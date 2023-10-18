@@ -21,12 +21,14 @@ export default class Background extends Component<propsType> {
         let className = status;
         className += rotate ? " rotate" : "";
         return (
-            <div id="background" className={className}>
-                <div className="welcomeBox">
-                    <h1>{isPhone ? `${name}'s Website`.replaceAll(" ", "\n") : `${name}'s Website`}</h1>
-                    <h2>Welcome</h2>
+            <div id="background-outer">
+                <div id="background" className={className}>
+                    <div className="welcomeBox">
+                        <h1>{isPhone ? `${name}'s Website`.replaceAll(" ", "\n") : `${name}'s Website`}</h1>
+                        <h2>Welcome</h2>
+                    </div>
+                    {children}
                 </div>
-                {children}
             </div>
         );
     }

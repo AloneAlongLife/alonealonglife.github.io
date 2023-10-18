@@ -1,4 +1,4 @@
-import { ReactNode, Component } from "react";
+import { ReactNode, Component, ReactElement } from "react";
 
 import Content from "../../components/Content";
 
@@ -7,17 +7,10 @@ type propsType = Readonly<{
     name: string,
     englishName: string,
     experiences: Array<string>,
-    intro?: string,
+    switchBackgroundRotate: (rotate?: boolean) => void,
+    intro: string,
     birthDay?: string,
-    email?: string,
-    githubUrl?: string,
-    githubDisplayName?: string,
-    twitterUrl?: string,
-    twitterDisplayName?: string,
-    instagramUrl?: string,
-    instagramDisplayName?: string,
-    facebookUrl?: string,
-    facebookDisplayName?: string,
+    children?: Array<ReactElement>
 }>;
 type stateType = Readonly<{
     displayPage: 0 | 1,
@@ -60,15 +53,8 @@ export default class ContentContainer extends Component<propsType, stateType> {
             intro,
             experiences,
             birthDay,
-            email,
-            githubUrl,
-            githubDisplayName,
-            twitterUrl,
-            twitterDisplayName,
-            instagramUrl,
-            instagramDisplayName,
-            facebookUrl,
-            facebookDisplayName,
+            children,
+            switchBackgroundRotate,
         } = this.props;
         const {ready, displayPage} = this.state;
 
@@ -76,20 +62,13 @@ export default class ContentContainer extends Component<propsType, stateType> {
             <Content
                 displayPage={displayPage}
                 switchPage={this.__switchPage}
+                switchBackgroundRotate={switchBackgroundRotate}
                 ready={ready}
                 name={name}
                 englishName={englishName}
                 intro={intro}
                 experiences={experiences}
-                birthDay={birthDay}
-                email={email}
-                twitterUrl={twitterUrl}
-                twitterDisplayName={twitterDisplayName}
-                instagramUrl={instagramUrl}
-                instagramDisplayName={instagramDisplayName}
-                facebookUrl={facebookUrl}
-                facebookDisplayName={facebookDisplayName}
-            />
+            >{children}</Content>
         )
     }
 }

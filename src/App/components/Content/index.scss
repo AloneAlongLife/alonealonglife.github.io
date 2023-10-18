@@ -2,47 +2,142 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: calc(100% - 4rem);
-    width: calc(100% - 4rem);
-    padding: 2rem;
-    display: flex;
+    opacity: 100%;
+    transform: translateY(0);
+    transition: opacity 1.5s, transform 1.5s;
     .page {
-        flex: 1;
         color: #FFF;
-    }
-    .page:nth-of-type(1) {
+        font-size: min(1.5rem, 5vw);
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        > * {
+            flex: 0;
+            margin: 0;
+        }
         img {
             display: block;
-            height: min(35%, );
             border-radius: 50%;
             object-fit: contain;
+            margin-bottom: min(1rem, 2vw);
         }
         h3 {
             margin: 0;
+            font-size: min(3rem, 8vw);
         }
         h3.name {
-            font-size: min(4.5rem, 13vw);
+            font-size: min(4.5rem, 10vw);
         }
         h3.englishName {
-            font-size: calc(min(4.5rem, 13vw) * var(--font-ratio));
+            // height: auto;
+            font-size: calc(min(4.5rem, 10vw) * var(--font-ratio));
         }
+    }
+    .page:nth-of-type(2) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         > div {
+            flex: 1;
+            overflow: hidden;
             display: flex;
-            align-items: center;
-            font-size: min(1.5rem, 4vw);
-            gap: 1rem;
-            margin: 0.5rem 0;
-            p {
+            flex-direction: column;
+        }
+        .intro {
+            .context {
+                margin: 0 min(1rem, 2vw);
+                padding: 0 min(1rem, 2vw);
+                overflow-y: auto;
+                p {
+                    text-indent: 2em;
+                    text-align: justify;
+                    margin: 0;
+                }
+            }
+        }
+        .experiences {
+            ul {
+                overflow-y: auto;
                 margin: 0;
+                padding-left: 2.5em;
             }
         }
     }
     .buttonBar {
-        position: absolute;
         display: none;
     }
 }
 
 #content:not(.ready) {
-    opacity: 0;
+    transform: translateY(2vh);
+    opacity: 0%;
+}
+
+@media (min-aspect-ratio: 1/1) {
+    #content {
+        display: flex;
+        height: calc(100% - 4rem);
+        width: calc(100% - 4rem);
+        padding: 2rem;
+        .page {
+            flex: 1;
+            img {
+                width: calc(32vw - 1.5em * max(0, var(--info-num)));;
+            }
+        }
+    }
+}
+
+@media (max-aspect-ratio: 1/1) {
+    #content {
+        display: block;
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        .page {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: calc(100% - 4vh - 2.5vw - 3rem);
+            width: calc(100% - 4vh);
+            padding: 2vh;
+            padding-bottom: calc(2vh + 2.5vw + 3rem);
+            opacity: 100%;
+            transition: opacity 0s 0.45s;
+            overflow: hidden;
+            img {
+                width: calc(70vh - 25vw - 1.5em * max(0, var(--info-num)));
+                max-width: 85%;
+            }
+        }
+        .page:not(.show) {
+            opacity: 0%;
+            pointer-events: none;
+        }
+        .buttonBar {
+            display: flex;
+            position: absolute;
+            bottom: 2vh;
+            width: calc(100% - 4vh);
+            margin: 0 2vh;
+            align-items: center;
+            justify-content: space-between;
+            pointer-events: none;
+            button {
+                font-size: 1.5rem;
+                background-color: transparent;
+                color: #8888;
+                border: #8888 solid 0.05rem;
+                max-height: 3rem;
+                padding: 1.25vw 1em;
+                border-radius: 0.25em;
+                transition: opacity 0s 0.45s;
+                pointer-events: initial;
+            }
+            button:not(.show) {
+                opacity: 0%;
+                pointer-events: none;
+            }
+        }
+    }
 }

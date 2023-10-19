@@ -90,7 +90,7 @@ export default class App extends React.Component<propsType, stateType> {
                     >
                         <InfoBox ms="cake" context="2004/10/21" />
                         <InfoBox ms="mail" context="contact@chih-hao.xyz" url="mailto:contact@chih-hao.xyz" />
-                        <InfoBox ms="g" context="CHUANG CHIH-HAO" url="https://github.com/AloneAlongLife" />
+                        <InfoBox ms="g" context="CHUANG CHIH-HAO" url="https://github.com/zhihao1021" />
                         {/* Twitter */}
                         {/* <InfoBox ms="t" context="" url="" /> */}
                         <InfoBox ms="i" context="zhi_hao_1021" url="https://www.instagram.com/zhi_hao_1021" />

@@ -9,7 +9,6 @@ type propsType = Readonly<{
     experiences: Array<string>,
     switchBackgroundRotate: (rotate?: boolean) => void,
     intro: string,
-    birthDay?: string,
     children?: Array<ReactElement>
 }>;
 type stateType = Readonly<{
@@ -52,7 +51,6 @@ export default class ContentContainer extends Component<propsType, stateType> {
             englishName,
             intro,
             experiences,
-            birthDay,
             children,
             switchBackgroundRotate,
         } = this.props;

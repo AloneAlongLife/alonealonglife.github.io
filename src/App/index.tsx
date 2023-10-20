@@ -63,10 +63,7 @@ export default class App extends React.Component<propsType, stateType> {
 
     render(): React.ReactNode {
         const {ready, rotate} = this.state;
-        const intro = "\
-            沒什麼好說的(X。高三下恰巧撿到成大資工乙組特殊選材名額，以正取最後一名進入成大資工，平常的興趣是做一些小專案，主要使用與擅長的語言為Python，專長為網頁全端，不喜歡打競程。\n\
-            其他興趣還有打遊戲、看動漫，偶爾會打音遊，但打得很爛。社恐、個性隨和 吧(沒有主見、選擇困難、不善拒絕，找我問事情最常得到的答案大概是\"不知道\"或\"都可以\"。看到訊息通常會馬上回，如果沒有可能是在睡覺或很忙，一般來說24小時內一定會回。 \
-        ";
+        const intro = "沒什麼好說的(X。高三下恰巧撿到成大資工乙組特殊選材名額，以正取最後一名進入成大資工，平常的興趣是做一些小專案，主要使用與擅長的語言為Python，專長為網頁全端，不喜歡打競程。\n其他興趣還有打遊戲、看動漫，偶爾會打音遊，但打得很爛。社恐、個性隨和 吧(沒有主見、選擇困難、不善拒絕，找我問事情最常得到的答案大概是\"不知道\"或\"都可以\"。看到訊息通常會馬上回，如果沒有可能是在睡覺或很忙，一般來說24小時內一定會回。";
         return (
             <div id="app">
                 <img alt="background" src={`${process.env.PUBLIC_URL}/index.jpg`} />
@@ -81,7 +78,6 @@ export default class App extends React.Component<propsType, stateType> {
                         name="莊智皓"
                         englishName="CHIH-HAO, CHUANG"
                         intro={intro}
-                        birthDay="2004/10/21"
                         experiences={[
                             "擔任FRC 8584隊長 (2021~2022)",
                             "就讀國立成功大學 資訊工程學系 (2023~)",

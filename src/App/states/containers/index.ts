@@ -1,5 +1,5 @@
 import BackgroundContainer from "./Background";
-import ContentContainer from "./Coontent";
+import ContentContainer from "./Content";
 
 export {
     BackgroundContainer,

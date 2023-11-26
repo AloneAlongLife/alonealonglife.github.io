@@ -89,6 +89,7 @@ export default class App extends React.Component<propsType, stateType> {
                         <InfoBox ms="g" context="CHUANG CHIH-HAO" url="https://github.com/zhihao1021" />
                         {/* Twitter */}
                         {/* <InfoBox ms="t" context="" url="" /> */}
+                        <InfoBox ms="d" context="zhihao1021" url="https://discordapp.com/users/302774180611358720" />
                         <InfoBox ms="i" context="zhi_hao_1021" url="https://www.instagram.com/zhi_hao_1021" />
                         <InfoBox ms="f" context="莊智皓" url="https://www.facebook.com/zhihao1021" />
                         <InfoBox ms="share" context="Code::Stats" url="https://codestats.net/users/Chuang%20Chi%20Hao" />

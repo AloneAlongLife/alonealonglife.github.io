@@ -63,7 +63,7 @@ export default class App extends React.Component<propsType, stateType> {
 
     render(): React.ReactNode {
         const {ready, rotate} = this.state;
-        const intro = "沒什麼好說的(X。高三下恰巧撿到成大資工乙組特殊選材名額，以正取最後一名進入成大資工，平常的興趣是做一些小專案，主要使用與擅長的語言為Python，專長為網頁全端，不喜歡打競程。\n其他興趣還有打遊戲、看動漫，偶爾會打音遊，但打得很爛。社恐、個性隨和 吧(沒有主見、選擇困難、不善拒絕，找我問事情最常得到的答案大概是\"不知道\"或\"都可以\"。看到訊息通常會馬上回，如果沒有可能是在睡覺或很忙，一般來說24小時內一定會回。";
+        const intro = "沒什麼好說的(X。高三下恰巧撿到成大資工乙組特殊選材名額，以正取最後一名進入成大資工，平常的興趣是做一些小專案，主要使用與擅長的語言為Python，專長為網頁全端，不喜歡打競程。";
         return (
             <div id="app">
                 <img alt="background" src={`${process.env.PUBLIC_URL}/index.jpg`} />
@@ -93,6 +93,7 @@ export default class App extends React.Component<propsType, stateType> {
                         <InfoBox ms="i" context="zhi_hao_1021" url="https://www.instagram.com/zhi_hao_1021" />
                         <InfoBox ms="f" context="莊智皓" url="https://www.facebook.com/zhihao1021" />
                         <InfoBox ms="share" context="Code::Stats" url="https://codestats.net/users/Chuang%20Chi%20Hao" />
+                        <InfoBox ms="share" context="Git Roll" url="https://gitroll.io/profile/uloFgQowoNOVVY9dlxC4olDx774S2" />
                         <InfoBox ms="share" context="FRC 8584" url="https://frc8584.ddns.net" />
                     </ContentContainer>
                 </BackgroundContainer>
